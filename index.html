@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Sandbox - Falling Sand Physics</title>
+  <meta name="description" content="Paint with sand, water, fire, lava, acid and TNT and watch the physics play out.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <h1 class="title">Sandbox</h1>
+      <div class="stats" aria-label="Statistics">
+        <span>Particles <b id="stat-particles">0</b></span>
+        <span>FPS <b id="stat-fps">0</b></span>
+      </div>
+    </header>
+
+    <div class="layout">
+
+      <!-- Stage: the canvas where everything happens -->
+      <main class="stage">
+        <div class="canvas-wrap">
+          <canvas id="canvas" class="canvas" role="img"
+                  aria-label="Falling sand sandbox. Paint with a mouse or finger to add materials."></canvas>
+        </div>
+        <p class="help">
+          <strong>Drag</strong> to paint &middot; <strong>Right-click</strong> to erase &middot;
+          <strong>Shift</strong> to paint over other materials<br>
+          <kbd>1</kbd>&ndash;<kbd>0</kbd> materials &middot; <kbd>Space</kbd> pause &middot;
+          <kbd>.</kbd> step &middot; <kbd>[</kbd> <kbd>]</kbd> brush size &middot; <kbd>C</kbd> clear
+        </p>
+      </main>
+
+      <!-- Sidebar: materials and controls -->
+      <aside class="sidebar">
+        <section>
+          <h2 class="panel-title">Materials</h2>
+          <div id="palette" class="palette" role="radiogroup" aria-label="Material"></div>
+        </section>
+
+        <section>
+          <h2 class="panel-title">Brush</h2>
+          <label class="slider">
+            <span>Size <b id="brush-label">3</b></span>
+            <input id="brush-size" type="range" min="1" max="12" value="3">
+          </label>
+          <label class="slider">
+            <span>Speed <b id="speed-label">2&times;</b></span>
+            <input id="speed" type="range" min="1" max="4" value="2">
+          </label>
+        </section>
+
+        <section>
+          <h2 class="panel-title">World</h2>
+          <div class="buttons">
+            <button id="pause-btn" class="btn" type="button">&#9208; Pause</button>
+            <button id="step-btn" class="btn" type="button" disabled>&#9197; Step</button>
+            <button id="clear-btn" class="btn btn--danger" type="button">Clear</button>
+            <button id="png-btn" class="btn" type="button">Save PNG</button>
+            <button id="save-btn" class="btn" type="button">Save</button>
+            <button id="load-btn" class="btn" type="button">Load</button>
+          </div>
+        </section>
+      </aside>
+
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <noscript>
+    <p style="text-align:center;color:#fff">This game needs JavaScript to run.</p>
+  </noscript>
+
+  <script src="js/config.js"></script>
+  <script src="js/materials.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/reactions.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
