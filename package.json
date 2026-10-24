@@ -1,0 +1,10 @@
+{
+  "name": "sandbox-game",
+  "version": "1.0.0",
+  "description": "A falling-sand physics sandbox built with vanilla HTML, CSS and JavaScript.",
+  "main": "index.html",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": ["sandbox", "falling-sand", "physics", "game", "javascript", "canvas"]
+}
